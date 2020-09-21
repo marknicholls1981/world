@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon.png" />
+    <link rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Where in the world am I?</title>
+  </head>
+  <body>
+    <div class="header">
+      <div class="container-fluid">
+        <h1>Where on earth am I??!!</h1>
+        <a href="./MarksGeoLocater/geolocate.php"> Json Result</a>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-4"></div>
+          <div class="col-sm-4 questions">
+            <label for="country">Please select a country:-</label>
+            <select name="country" id="country">
+              <option value="GB">Great Britain</option>
+              <option value="FR">France</option>
+              <option value="DE">Germany</option>
+              <option value="US">USA</option>
+            </select>
+            <label for="language">Please select a language:-</label>
+            <select name="language" id="language">
+              <option value="en">English</option>
+              <option value="fr">Francais</option>
+              <option value="de">Deutsche</option>
+            </select>
+            <div class="button">
+              <button id="Submit">Submit</button>
+            </div>
+          </div>
+          <div class="col-sm-4"></div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-4"></div>
+          <div class="col-sm-4 answers">
+            <table>
+              <tr>
+                <td>Continent:</td>
+                <td id="txtContinent"></td>
+              </tr>
+
+              <tr>
+                <td>Capital:</td>
+                <td id="txtCapital"></td>
+              </tr>
+
+              <tr>
+                <td>Languages:</td>
+                <td id="txtLanguages"></td>
+              </tr>
+
+              <tr>
+                <td>Population:</td>
+                <td id="txtPopulation"></td>
+              </tr>
+
+              <tr>
+                <td>Area (km<sup>2</sup>):</td>
+                <td id="txtArea"></td>
+              </tr>
+            </table>
+          </div>
+          <div class="col-sm-4"></div>
+        </div>
+      </div>
+      <div id="preloader"></div>
+    </div>
+
+    <script src="vendors/jquery/jquery.min.js"></script>
+
+    <script src="vendors/bootstrap/bootstrap.min.js"></script>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
