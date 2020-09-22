@@ -16,12 +16,12 @@
       rel="stylesheet"
     />
 
-    <title>Where in the world am I?</title>
+    <title>API's</title>
   </head>
   <body>
     <div class="header">
       <div class="container-fluid">
-        <h1>Where on earth am I??!!</h1>
+        <h1>Nearest Streets</h1>
         <a href="./MarksGeoLocater/geolocate.php"> Json Result</a>
       </div>
     </div>
@@ -31,18 +31,10 @@
         <div class="row">
           <div class="col-sm-4"></div>
           <div class="col-sm-4 questions">
-            <label for="country">Please select a country:-</label>
-            <select name="country" id="country">
-              <option value="GB">Great Britain</option>
-              <option value="FR">France</option>
-              <option value="DE">Germany</option>
-              <option value="US">USA</option>
-            </select>
-            <label for="language">Please select a language:-</label>
-            <select name="language" id="language">
-              <option value="en">English</option>
-              <option value="fr">Francais</option>
-              <option value="de">Deutsche</option>
+            <select id="selectTown">
+              <option value="lat=51.555&lng=-1.779">Swindon</option>
+              <option value="lat=51.455&lng=-2.587">Bristol</option>
+              <option value="lat=53.480&lng=-2.242">Manchester</option>
             </select>
             <div class="button">
               <button id="Submit">Submit</button>
@@ -57,28 +49,49 @@
           <div class="col-sm-4 answers">
             <table>
               <tr>
-                <td>Continent:</td>
-                <td id="txtContinent"></td>
+                <td>Nearest Street:</td>
+                <td id="town"></td>
               </tr>
-
+            </table>
+          </div>
+          <div class="col-sm-4"></div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <h1>Weather</h1>
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-4"></div>
+          <div class="col-sm-4 questions">
+            <select id="selectCity">
+              <option value="EGLL">London</option>
+              <option value="EGPF">Glasgow</option>
+              <option value="EIDW">Dublin</option>
+            </select>
+            <div class="button">
+              <button id="submitWeather">Submit</button>
+            </div>
+          </div>
+          <div class="col-sm-4"></div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-4"></div>
+          <div class="col-sm-4 answers">
+            <table>
               <tr>
-                <td>Capital:</td>
-                <td id="txtCapital"></td>
+                <td>Temperature :-</td>
+                <td id="temp"></td>
               </tr>
-
               <tr>
-                <td>Languages:</td>
-                <td id="txtLanguages"></td>
+                <td>Wind Direction :-</td>
+                <td id="wind"></td>
               </tr>
-
               <tr>
-                <td>Population:</td>
-                <td id="txtPopulation"></td>
-              </tr>
-
-              <tr>
-                <td>Area (km<sup>2</sup>):</td>
-                <td id="txtArea"></td>
+                <td>Clouds :-</td>
+                <td id="clouds"></td>
               </tr>
             </table>
           </div>

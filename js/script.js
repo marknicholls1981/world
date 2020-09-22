@@ -1,21 +1,40 @@
 $("#Submit").click(function () {
   $.ajax({
-    url: "php/getCountryInfo.php",
+    url: "php/getTownInfo.php",
     type: "POST",
     dataType: "json",
     data: {
-      country: $("#country").val(),
-      lang: $("#language").val(),
+      town: $("#selectTown").val(),
     },
     success: function (result) {
       console.log(result);
 
       if (result.status.name == "ok") {
-        $("#txtContinent").html(result["data"][0]["continent"]);
-        $("#txtCapital").html(result["data"][0]["capital"]);
-        $("#txtLanguages").html(result["data"][0]["languages"]);
-        $("#txtPopulation").html(result["data"][0]["population"]);
-        $("#txtArea").html(result["data"][0]["areaInSqKm"]);
+        $("#town").html(result["data"][0]["name"]);
+      }
+    },
+    error: function (jqXHR, textStatus, errorThrown) {
+      console.log("Error");
+      // your error code
+    },
+  });
+});
+
+$("#submitWeather").click(function () {
+  $.ajax({
+    url: "php/getWeatherInfo.php",
+    type: "POST",
+    dataType: "json",
+    data: {
+      weatherStation: $("#selectCity").val(),
+    },
+    success: function (result) {
+      console.log(result);
+
+      if (result.status.name == "ok") {
+        $("#temp").html(result["data"]["temperature"]);
+        $("#wind").html(result["data"]["windDirection"]);
+        $("#clouds").html(result["data"]["clouds"]);
       }
     },
     error: function (jqXHR, textStatus, errorThrown) {

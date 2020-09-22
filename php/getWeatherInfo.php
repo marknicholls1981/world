@@ -1,8 +1,9 @@
 <?php
 $executionStartTime = microtime(true) / 1000;
 
-$url='http://api.geonames.org/countryInfoJSON?formatted=true&lang=' . $_REQUEST['lang'] . '&country=' . $_REQUEST['country'] . '&username=cusx1981' .'&style=full';
-	
+$url= "http://api.geonames.org/weatherIcaoJSON?ICAO=" . $_REQUEST['weatherStation'] . "&username=CUSX1981";
+
+
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -22,12 +23,10 @@ $output['status']['code'] = "200";
 $output['status']['name'] = "ok";
 $output['status']['description'] = "mission saved";
 $output['status']['returnedIn'] = (microtime(true) - $executionStartTime) / 1000 . " ms";
-$output['data'] = $decode['geonames'];
+$output['data'] = $decode['weatherObservation'];
 	
 header('Content-Type: application/json; charset=UTF-8');
 
 echo json_encode($output); 
 
 ?>
-
-
